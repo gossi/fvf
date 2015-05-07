@@ -405,17 +405,13 @@ public class ArduinoLedDriver {
 		}
 	}
 	
-	public void cmdLedFlicker(int led, double frequency) {
-		try {
-			send("flicker " + led + " " + frequency);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public void cmdMeasurement(int mode, int flickerLed, double frequency, int onDuration, int offDuration) {
+		cmdMeasurement(mode, flickerLed, frequency, onDuration, offDuration, 1, 1);
 	}
 	
-	public void cmdMeasurement(int mode, int flickerLed, double frequency, int onDuration, int offDuration) {
+	public void cmdMeasurement(int mode, int flickerLed, double frequency, int onDuration, int offDuration, int light, int dark) {
 		try {
-			send("measurement " + mode + " " + flickerLed + " " + frequency + " " + onDuration + " " + offDuration);
+			send("measurement " + mode + " " + flickerLed + " " + frequency + " " + onDuration + " " + offDuration + " " + light + " " + dark);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -45,7 +45,7 @@ public class TestRunnerListenerCollection {
 		for (ITestRunnerListener listener : listeners) {
 			switch (eventType) {
 			case LED_ON:
-				listener.ledOn((Integer)param, (Integer)param2, (Boolean)param3);
+				listener.ledOn((Integer)param, (Boolean) param2);
 				break;
 				
 			case LED_OFF:

@@ -22,7 +22,8 @@ public class DefaultPreferences extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.TEST_LED_DURATION, 1.25);
 		store.setDefault(PreferenceConstants.TEST_LED_PAUSE, 0.2);
 		store.setDefault(PreferenceConstants.TEST_STOP_CRITERIA, 5);
-		store.setDefault(PreferenceConstants.TEST_BRIGHTNESS, 100);
+		store.setDefault(PreferenceConstants.TEST_LIGHT, 1);
+		store.setDefault(PreferenceConstants.TEST_DARK, 1);
 		
 		// visuals
 		store.setDefault(PreferenceConstants.VISUAL_HIGHLIGHT_FLICKER_LED, true);

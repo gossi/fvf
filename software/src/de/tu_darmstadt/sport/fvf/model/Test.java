@@ -46,7 +46,9 @@ public class Test extends Model {
 	@Column(name="frequency_cycles")
 	private int frequencyCycles = 8;
 	
-	private double brightness;
+	private int light;
+	
+	private int dark;
 	
 	@Column(name="stop_criteria")
 	private int stopCriteria = 5;
@@ -76,7 +78,8 @@ public class Test extends Model {
 		ledDuration = store.getDouble(PreferenceConstants.TEST_LED_DURATION);
 		ledPause = store.getDouble(PreferenceConstants.TEST_LED_PAUSE);
 		stopCriteria = store.getInt(PreferenceConstants.TEST_STOP_CRITERIA);
-		brightness = store.getInt(PreferenceConstants.TEST_BRIGHTNESS);
+		light = store.getInt(PreferenceConstants.TEST_LIGHT);
+		dark = store.getInt(PreferenceConstants.TEST_DARK);
 	}
 	
 	public void reset() {
@@ -305,17 +308,31 @@ public class Test extends Model {
 	}
 
 	/**
-	 * @return the brightness
+	 * @return the light part
 	 */
-	public double getBrightness() {
-		return brightness;
+	public int getLight() {
+		return light;
 	}
 
 	/**
-	 * @param brightness the brightness to set
+	 * @param light the light to set
 	 */
-	public void setBrightness(double brightness) {
-		propertyChangeSupport.firePropertyChange("brightness", this.brightness, this.brightness = brightness);
+	public void setLight(int light) {
+		propertyChangeSupport.firePropertyChange("light", this.light, this.light = light);
+	}
+	
+	/**
+	 * @return the dark part
+	 */
+	public int getDark() {
+		return dark;
+	}
+
+	/**
+	 * @param dark the dark to set
+	 */
+	public void setDark(int dark) {
+		propertyChangeSupport.firePropertyChange("dark", this.dark, this.dark = dark);
 	}
 
 	public double getAchievedFrequency() {

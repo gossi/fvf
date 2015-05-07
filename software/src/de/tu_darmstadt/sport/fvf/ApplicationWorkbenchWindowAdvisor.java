@@ -104,7 +104,13 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 	private void updateConnectionStatus() {
 		final boolean connected = driver.isConnected();
 		
-		getWindowConfigurer().getWindow().getShell().getDisplay().asyncExec(new Runnable() {
+		Shell window = getWindowConfigurer().getWindow().getShell();
+		
+		if (window == null) {
+			return;
+		}
+		
+		window.getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				// status line
 				for (IStatusLineManager status : statusManager) {

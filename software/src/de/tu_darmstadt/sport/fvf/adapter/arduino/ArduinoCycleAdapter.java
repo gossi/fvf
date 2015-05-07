@@ -19,13 +19,13 @@ public class ArduinoCycleAdapter implements IMeasurementCycleAdapter {
 	/**
 	 * Runs one measurement
 	 */
-	public void run(int mode, int flickerLed, double frequency, int onDuration, int offDuration, int cyclePause, int brightness) throws InterruptedException {
+	public void run(int mode, int flickerLed, double frequency, int onDuration, int offDuration, int cyclePause, int light, int dark) throws InterruptedException {
 		int sleep = offDuration + onDuration + mode * offDuration + mode * onDuration;
 		for (int i = 1; i <= 4; i++) {
 			driver.cmdLedOff(i);
 		}
 		
-		driver.cmdMeasurement(mode, flickerLed, frequency, onDuration, offDuration);
+		driver.cmdMeasurement(mode, flickerLed, frequency, onDuration, offDuration, light, dark);
 		
 		Thread.sleep(sleep);
 	}

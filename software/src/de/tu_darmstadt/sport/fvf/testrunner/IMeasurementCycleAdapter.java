@@ -15,11 +15,12 @@ public interface IMeasurementCycleAdapter {
 	 * @param onDuration the duration which each individual led is on [ms]
 	 * @param offDuration the duration between the flickering [ms]
 	 * @param cyclePause the duration between each measurement cycle [ms]
-	 * @param brightnessQuotient the brightness value for the darker LEDs 1 (dark) to 100 (bright)
+	 * @param light the light part for the light:dark ratio
+	 * @param dark the dark part for the light:dark ratio
 	 * @throws InterruptedException
 	 */
 	void run(int mode, int flickerLed, double frequency, int onDuration,
-			int offDuration, int cyclePause, int brightnessQuotient)
+			int offDuration, int cyclePause, int light, int dark)
 			throws InterruptedException;
 	
 	public void setTestRunnerListenerCollection(TestRunnerListenerCollection collection);

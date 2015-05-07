@@ -36,8 +36,8 @@ public class TestSetupPage extends WizardPage {
 	private Spinner cyclePause;
 	private Spinner frequencyCycles;
 	private Text text;
-//	private Text light;
-//	private Text dark;
+	private Text light;
+	private Text dark;
 	private boolean firstRun;
 	
 	public TestSetupPage() {
@@ -152,30 +152,30 @@ public class TestSetupPage extends WizardPage {
 			}
 		});
 		
-//		Label lblHelldunkelQuotient = new Label(container, SWT.NONE);
-//		lblHelldunkelQuotient.setText("Hell/Dunkel Quotient");
-//		
-//		Composite composite = new Composite(container, SWT.NONE);
-//		composite.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
-//		GridLayout gl_composite = new GridLayout(4, false);
-//		gl_composite.marginHeight = 0;
-//		gl_composite.marginWidth = 0;
-//		composite.setLayout(gl_composite);
-//		
-//		Label lblHell = new Label(composite, SWT.NONE);
-//		lblHell.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-//		lblHell.setText("Hell");
-//		
-//		light = new Text(composite, SWT.BORDER);
-//		light.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-//		
-//		Label lblZuDunkel = new Label(composite, SWT.NONE);
-//		lblZuDunkel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-//		lblZuDunkel.setText("zu Dunkel");
-//		
-//		dark = new Text(composite, SWT.BORDER);
-//		dark.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-//		
+		Label lblHelldunkelQuotient = new Label(container, SWT.NONE);
+		lblHelldunkelQuotient.setText("Hell/Dunkel Quotient");
+		
+		Composite composite = new Composite(container, SWT.NONE);
+		composite.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
+		GridLayout gl_composite = new GridLayout(4, false);
+		gl_composite.marginHeight = 0;
+		gl_composite.marginWidth = 0;
+		composite.setLayout(gl_composite);
+		
+		Label lblHell = new Label(composite, SWT.NONE);
+		lblHell.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		lblHell.setText("Hell");
+		
+		light = new Text(composite, SWT.BORDER);
+		light.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
+		Label lblZuDunkel = new Label(composite, SWT.NONE);
+		lblZuDunkel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		lblZuDunkel.setText("zu Dunkel");
+		
+		dark = new Text(composite, SWT.BORDER);
+		dark.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
 		Label lblBemerkung = new Label(container, SWT.NONE);
 		lblBemerkung.setText("Bemerkung");
 		new Label(container, SWT.NONE);
@@ -257,13 +257,13 @@ public class TestSetupPage extends WizardPage {
 		IObservableValue testFrequencyCyclesObserveValue = BeansObservables.observeValue(test, "frequencyCycles");
 		bindingContext.bindValue(spinnerObserveSelectionObserveWidget, testFrequencyCyclesObserveValue, null, null);
 		//
-//		IObservableValue lightObserveTextObserveWidget = SWTObservables.observeText(light, SWT.Modify);
-//		IObservableValue testLightObserveValue = BeansObservables.observeValue(test, "light");
-//		bindingContext.bindValue(lightObserveTextObserveWidget, testLightObserveValue, null, null);
-//		//
-//		IObservableValue darkObserveTextObserveWidget = SWTObservables.observeText(dark, SWT.Modify);
-//		IObservableValue testDarkObserveValue = BeansObservables.observeValue(test, "dark");
-//		bindingContext.bindValue(darkObserveTextObserveWidget, testDarkObserveValue, null, null);
+		IObservableValue lightObserveTextObserveWidget = SWTObservables.observeText(light, SWT.Modify);
+		IObservableValue testLightObserveValue = BeansObservables.observeValue(test, "light");
+		bindingContext.bindValue(lightObserveTextObserveWidget, testLightObserveValue, null, null);
+		//
+		IObservableValue darkObserveTextObserveWidget = SWTObservables.observeText(dark, SWT.Modify);
+		IObservableValue testDarkObserveValue = BeansObservables.observeValue(test, "dark");
+		bindingContext.bindValue(darkObserveTextObserveWidget, testDarkObserveValue, null, null);
 		//
 		return bindingContext;
 	}

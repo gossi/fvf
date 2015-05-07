@@ -79,7 +79,8 @@ public class DatabaseCreateHandler extends AbstractHandler {
 								"led_duration DOUBLE NULL ,"+
 								"led_pause DOUBLE NULL ,"+
 								"cycle_pause DOUBLE NULL ,"+
-								"brightness DOUBLE NULL ,"+
+								"light INTEGER NULL ,"+
+								"dark INTEGER NULL ,"+
 								"stop_criteria INTEGER NULL ,"+
 								"person_id INTEGER NOT NULL ,"+
 								"CONSTRAINT fk_test_person "+

@@ -305,8 +305,8 @@ public class ResultView extends ViewPart {
 		(new Label(setup, SWT.NONE)).setText("Abbruchkriterium (Falschnennungen)");
 		(new Label(setup, SWT.NONE)).setText(""+test.getStopCriteria());
 		
-//		(new Label(setup, SWT.NONE)).setText("Helligkeit");
-//		(new Label(setup, SWT.NONE)).setText(""+test.getBrightness());
+		(new Label(setup, SWT.NONE)).setText("Hell/Dunkel Quotient");
+		(new Label(setup, SWT.NONE)).setText(""+test.getLight() + "/" + test.getDark());
 		
 		setupItem.setControl(setup);
 		

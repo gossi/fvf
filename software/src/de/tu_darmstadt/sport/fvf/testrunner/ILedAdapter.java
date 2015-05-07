@@ -2,8 +2,6 @@ package de.tu_darmstadt.sport.fvf.testrunner;
 
 public interface ILedAdapter {
 	
-	public final static int BRIGHTNESS_HIGH = 100;
-	
 	/**
 	 * Turns on a LED
 	 * 
@@ -11,16 +9,9 @@ public interface ILedAdapter {
 	 */
 	public void ledOn(int led);
 	
-	/**
-	 * Turns on a LED
-	 * 
-	 * @param led the number of the LED
-	 */
-	public void ledOn(int led, int brightness);
+	public void ledFlicker(int led, double frequency, int duration);
 	
-	public void ledFlicker(int led, double frequency);
-	
-	public void ledFlicker(int led, double frequency, int brightness);
+	public void ledFlicker(int led, double frequency, int duration, int light, int dark);
 	
 	/**
 	 * Turns off a LED

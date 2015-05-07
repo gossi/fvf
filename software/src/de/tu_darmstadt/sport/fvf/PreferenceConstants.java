@@ -46,9 +46,14 @@ public interface PreferenceConstants {
 	final public static String TEST_STOP_CRITERIA	= "test.stopCriteria";
 	
 	/**
-	 * Helligkeit der LEDs
+	 * Helligkeitanteil des Hell:Dunkel Quotient
 	 */
-	final public static String TEST_BRIGHTNESS		= "test.brightness";
+	final public static String TEST_LIGHT			= "test.light";
+	
+	/**
+	 * Dunkelanteil des Hell:Dunkel Quotient
+	 */
+	final public static String TEST_DARK			= "test.dark";
 	
 	
 	final public static String VISUAL_HIGHLIGHT_FLICKER_LED = "visual.hightlightFlickerLed";

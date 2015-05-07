@@ -257,33 +257,5 @@ public class ArduinoLedDriverTest {
 			fail();
 		}
 	}
-	
-	@Test
-	public void testLedFlicker() {
-		try {
-			SerialListener listener = new SerialAdapter() {
-				public void onInput(String input) {
-					asyncInput = input;
-					counter.countDown();
-				}
-				
-				public void ledFlicker(int led) {
-					asyncCall = true;
-				}
-			};
-			driver.addListener(listener);
-			send(driver, "flicker 1 25");
-		
-			counter.await(TIMEOUT, TimeUnit.SECONDS);
-			
-			assertEquals("flicker 1", asyncInput);
-			assertTrue(asyncCall);
-			
-			driver.removeListener(listener);
-			
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-			fail();
-		}
-	}
+
 }

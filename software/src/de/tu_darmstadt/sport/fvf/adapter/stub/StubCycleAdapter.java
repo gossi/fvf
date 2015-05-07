@@ -16,18 +16,18 @@ public class StubCycleAdapter implements IMeasurementCycleAdapter {
 	/**
 	 * Runs one measurement
 	 */
-	public void run(int mode, int flickerLed, double frequency, int onDuration, int offDuration, int cyclePause, int brightness) throws InterruptedException {
+	public void run(int mode, int flickerLed, double frequency, int onDuration, int offDuration, int cyclePause, int light, int dark) throws InterruptedException {
 
 		// glow all at the beginning wait a little
 		ledsOff(mode);
 		Thread.sleep(offDuration);
-		ledsOn(mode, brightness);
+		ledsOn(mode);
 		Thread.sleep(onDuration);
 		ledsOff(mode);
 		
 		for (int i = 1; i <= mode; i++) {
 			if (i == flickerLed) {
-				ledAdapter.ledFlicker(i, frequency);
+				ledAdapter.ledFlicker(i, frequency, onDuration);
 			} else {
 				ledAdapter.ledOn(i);
 			}
@@ -37,10 +37,10 @@ public class StubCycleAdapter implements IMeasurementCycleAdapter {
 		}
 
 		// all leds on, wait for input
-		ledsOn(mode, 100);
+		ledsOn(mode);
 	}
 	
-	private void ledsOn(int mode, int brightness) throws InterruptedException {
+	private void ledsOn(int mode) {
 		for (int i = 1; i <= mode; i++) {
 			ledAdapter.ledOn(i);
 		}

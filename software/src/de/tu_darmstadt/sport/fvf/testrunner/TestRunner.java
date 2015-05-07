@@ -111,7 +111,7 @@ public class TestRunner implements Runnable {
 
 			cycleAdapter.run(test.getLeds(), flickerLed, getFrequency(), 
 					(int)(test.getLedDuration() * 1000), (int)(test.getLedPause() * 1000),
-					(int)(test.getCyclePause() * 1000), (int)(test.getBrightness()));
+					(int)(test.getCyclePause() * 1000), test.getLight(), test.getDark());
 			
 			listeners.fireEvent(TestRunnerListenerCollection.MEASUREMENT_CYCLE_FINISHED);
 
