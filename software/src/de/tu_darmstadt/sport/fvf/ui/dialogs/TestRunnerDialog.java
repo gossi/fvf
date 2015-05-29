@@ -3,8 +3,10 @@ package de.tu_darmstadt.sport.fvf.ui.dialogs;
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeansObservables;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.StatusDialog;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.DisposeEvent;
@@ -15,7 +17,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Device;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -36,17 +37,15 @@ import de.tu_darmstadt.sport.fvf.model.Test;
 import de.tu_darmstadt.sport.fvf.testrunner.ITestRunnerListener;
 import de.tu_darmstadt.sport.fvf.testrunner.TestRunner;
 
-public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
+public class TestRunnerDialog extends StatusDialog implements ITestRunnerListener {
 
 	private Test test;
 	private TestRunner testRunner;
 
 	private Image lightBulbOff;
-	private Image[] lightBulbs;
+	private Image lightBulbOn;
 	private Color foreground;
 	private Color highlightColor;
-	private Color background;
-	private Color errorBackground;
 	private Image yep;
 	private Image nope;
 	
@@ -65,7 +64,6 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 	private TableItem sbRuns;
 	private TableItem sbResults;
 	private TableItem sbErrors;
-	private Label errorMessage;
 	
 	private Button led1;
 	private Button led2;
@@ -134,17 +132,12 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 		nope = FVF.getImageDescriptor("icons/nope.png").createImage();
 		
 		// light bulb images
-		lightBulbs = new Image[11];
-		for (int i = 0; i <= 10; i++) {
-			lightBulbs[i] = FVF.getImageDescriptor("icons/lightbulb/lightbulb-" + (i * 10) + ".png").createImage();
-		}
 		lightBulbOff = FVF.getImageDescriptor("icons/lightbulb/lightbulb_off.png").createImage();
+		lightBulbOn = FVF.getImageDescriptor("icons/lightbulb/lightbulb_on.png").createImage();
 
 		// colors
 		highlightColor = new Color((Device)parentShell.getDisplay(), 
 				PreferenceConverter.getColor(FVF.getDefault().getPreferenceStore(), PreferenceConstants.VISUAL_HIGHLIGHT_COLOR));
-		
-		errorBackground = new Color((Device)parentShell.getDisplay(), new RGB(255, 0, 0));
 	}
 	
 	@Override
@@ -160,6 +153,7 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 //				}
 //			}
 //		});
+		
 		
 		final TestRunnerDialog self = this;
 		// add keyboard handler and remove it on shell dispose
@@ -271,12 +265,6 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 		sbErrors = new TableItem(scoreboard, SWT.NONE);
 		sbErrors.setText(0, "Fehler:");
 		
-		errorMessage = new Label(parent, SWT.NONE);
-//		GridData gdMsg = new GridData(SWT.TOP, SWT.BEGINNING, false, false);
-		errorMessage.setLayoutData(new GridData(SWT.CENTER, SWT.TOP, false, false, 1, 1));
-		errorMessage.setText("                                                                                                                                          ");
-		background = errorMessage.getBackground();
-		
 		Composite buttons = new Composite(parent, SWT.NONE);
 		buttons.setLayoutData(new GridData(SWT.CENTER, SWT.TOP, false, false, 1, 1));
 		GridLayout gl_buttons = new GridLayout(2, false);
@@ -303,7 +291,6 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 		led1.setData(1);
 		led1.addSelectionListener(ledListener);
 		foreground = led1.getForeground();
-		
 		
 		led2 = new Button(buttons, SWT.NONE);
 		GridData gd_led2 = new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1);
@@ -366,24 +353,24 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 			sbResults.setText(testRunner.getCurrentMeasurement().getRun(), ""+led);
 			
 			// try proceed
-			doNextMeasurement(true, true);
+			doNextMeasurement(false, false);
 		}
 	}
 
 	@Override
 	public void ledOn(final int led, boolean canFlicker) {
 		final Button btn = ledButtons[led - 1];
-		
+
 		// flicker animation
 		if (FVF.getDefault().getPreferenceStore().getBoolean(PreferenceConstants.VISUAL_ANIMATE_FLICKER_LED)
-				&& led == lastFlickeringLed && canFlicker) {
-			
+				&& led == testRunner.getCurrentMeasurement().getLed()) {
+
 			flickerAnimation = new Thread(new Runnable() {
 				public void run() {
 					boolean on = true;
 					try {
 						while (!Thread.currentThread().isInterrupted()) {
-							final Image img = on ? lightBulbs[10] : lightBulbOff;
+							final Image img = on ? lightBulbOn : lightBulbOff;
 							getShell().getDisplay().syncExec(new Runnable() {
 								public void run() {
 									btn.setImage(img);
@@ -408,7 +395,7 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 		else {
 			getShell().getDisplay().syncExec(new Runnable() {
 				public void run() {
-					btn.setImage(lightBulbs[10]);
+					btn.setImage(lightBulbOn);
 					btn.update();
 				}
 			});
@@ -435,7 +422,7 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 			public void run() {
 				for (int i = 0; i < mode; i++) {
 					Button btn = ledButtons[i];
-					btn.setImage(lightBulbs[10]);
+					btn.setImage(lightBulbOn);
 				}
 			}
 		});
@@ -490,14 +477,11 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 				sbRuns.setText(testRunner.getCurrentMeasurement().getRun(), "?");
 			}
 		});
-		
-		
 	}
 
 	@Override
 	public void measurementCycleFinished() {
 		measurementRunning = false;
-		System.out.println("Cycle Finished");
 		doNextMeasurement(false, false);
 	}
 
@@ -552,65 +536,49 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 		});
 	}
 	
-	private void doNextMeasurement() {
-		doNextMeasurement(false, true);
-	}
-	
-	private void doNextMeasurement(boolean proceed, boolean allowError) {
+	private void doNextMeasurement(boolean proceed, final boolean allowError) {
 		if (measurementRunning) {
+			return;
+		}
+		
+		boolean userInput = testRunner.getCurrentMeasurement().getPersonLed() != -1;
+		
+		if (!userInput) {
 			return;
 		}
 		
 		int personLed = testRunner.getCurrentMeasurement().getPersonLed();
 		final int led = testRunner.getCurrentMeasurement().getLed();
-
-//		if (personLed == -1) {
-//			if (!measurementRunning) {
-//				getShell().getDisplay().asyncExec(new Runnable() {
-//					public void run() {
-//						cancelButton.setEnabled(true);
-//					}
-//				});
-//			}
-//			return;
-//		}
-		
 		final boolean error = personLed != led;
-		testRunner.getCurrentMeasurement().setError(error);
 
-		// enable buttons when errors are present
-		if (allowError && error) {
+		// enable buttons when errors are present and we are not forced to proceed
+		if (error && !proceed && !allowError) {
 			getShell().getDisplay().asyncExec(new Runnable() {
 				public void run() {
 					for (Button btn : measurementButtons) {
 						btn.setEnabled(true);
 					}
 
-					errorMessage.setText("Die Eingabe des Probanten war Fehlerhaft, bitte entscheide unten wie es weiter geht.");
-					errorMessage.setBackground(errorBackground);
+					IStatus status = new Status(IStatus.WARNING, FVF.PLUGIN_ID, "Die Eingabe des Probanten war Fehlerhaft, bitte entscheide unten wie es weiter geht.");
+					updateStatus(status);
 				}
 			});
 			return;
 		}
 		
-		// can't proceed waiting for input
-		if (!proceed) {
-			getShell().getDisplay().asyncExec(new Runnable() {
-				public void run() {
-					for (Button btn : measurementButtons) {
-						btn.setEnabled(true);
-					}
-				}
-			});
-			return;
+		// update errors
+		if (error && !allowError) {
+			testRunner.setErrors(testRunner.getErrors() + 1);
 		}
+		testRunner.getCurrentMeasurement().setError(error && !allowError);
 
+		// proceed
 		// UI Updates
 		final int run = testRunner.getCurrentMeasurement().getRun();
 		getShell().getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				// update Scoreboard
-				sbErrors.setImage(run, error ? nope : yep);
+				sbErrors.setImage(run, error && !allowError ? nope : yep);
 				sbRuns.setText(run, ""+led);
 				
 				// disable buttons
@@ -619,22 +587,16 @@ public class TestRunnerDialog extends Dialog implements ITestRunnerListener {
 				}
 				
 				// error message
-				errorMessage.setText("");
-				errorMessage.setBackground(background);
+				updateStatus(null);
 			}
 		});
-		
-		// update errors
-		if (error) {
-			testRunner.setErrors(testRunner.getErrors() + 1);
-		}
-		
+
 		// proceed
 		(new Thread(testRunner, "TestRunner")).start();
 	}
 	
 	private void doContinueWOError() {
-		doNextMeasurement(true, false);
+		doNextMeasurement(true, true);
 	}
 	
 	private void doContinue() {

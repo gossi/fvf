@@ -8,6 +8,6 @@
 	<classpathentry exported="true" kind="lib" path="lib/sqljet-1.0.7.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/arduino-driver.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/rxtx-2.1-7-bins-r2/RXTXcomm.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/rxtx-2.1-7-bins-r2/RXTXcomm.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

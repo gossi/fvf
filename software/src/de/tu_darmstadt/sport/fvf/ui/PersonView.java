@@ -38,7 +38,6 @@ public class PersonView extends ViewPart {
 	private TableViewer viewer;
 	private IContextActivation context;
 	private IContextService contextService;
-	private boolean contextActive = false;
 
 	/**
 	 * This is a callback that will allow us to create the viewer and initialize
@@ -117,10 +116,7 @@ public class PersonView extends ViewPart {
 					if (found != null) {
 						int index = table.indexOf(found);
 						table.select(index);
-
 					}
-
-//					activateContext();
 				}
 			}
 		});
@@ -129,12 +125,10 @@ public class PersonView extends ViewPart {
 	}
 	
 	private void activateContext() {
-		contextActive = true;
 		context = contextService.activateContext(FVFConstants.CONTEXT_PERSON_SELECTED);
 	}
 	
 	private void deactivateContext() {
-		contextActive = false;
 		contextService.deactivateContext(context);
 	}
 	
