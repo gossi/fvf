@@ -1,0 +1,19 @@
+site_name: FVF Documentation
+repo_url: https://github.com/gossi/fvf
+theme: readthedocs
+pages:
+  - Introduction: 'index.md'
+  - Source Documentation:
+    - Structure: 'source/structure.md'
+    - Firmware: 'source/firmware.md'
+    - Driver: 'source/driver.md'
+  - Developer Documentation:
+    - Setup: 'development/setup.md'
+    - Deployment: 'development/deployment.md'
+    - Documentation: 'development/documentation.md'
+  - About:
+    - License: 'license.md'
+markdown_extensions:
+  - meta
+  - toc
+  - sane_lists
