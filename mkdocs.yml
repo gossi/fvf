@@ -1,5 +1,6 @@
 site_name: FVF Documentation
 repo_url: https://github.com/gossi/fvf
+repo_name: GitHub
 theme: readthedocs
 pages:
   - Introduction: 'index.md'
@@ -13,7 +14,3 @@ pages:
     - Documentation: 'development/documentation.md'
   - About:
     - License: 'license.md'
-markdown_extensions:
-  - meta
-  - toc
-  - sane_lists
