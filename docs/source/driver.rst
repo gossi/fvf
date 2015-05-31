@@ -11,7 +11,7 @@ The client software talks to the Arduino board through a serial port connection.
 Protocol
 --------
 
-The implements the :doc:`../appendix/led-protocol`.
+The driver implements the :doc:`../appendix/led-protocol`.
 
 References
 ----------
