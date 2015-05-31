@@ -38,3 +38,11 @@ Contents:
    :caption: Appendix
 
    appendix/led-protocol
+
+.. _about-docs:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: About
+
+   license
