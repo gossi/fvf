@@ -46,8 +46,11 @@ public class FVF extends AbstractUIPlugin {
 			loader.initialize();
 		}
 		
+		
+		// uncomment next line for debug mode
+//		ArduinoLedDriver.setDebugMode(true);
+		
 		// start connections
-		ArduinoLedDriver.setDebugMode(true);
 		try {
 			driver.connect();
 		} catch (Exception e) {
@@ -64,11 +67,10 @@ public class FVF extends AbstractUIPlugin {
 		plugin = null;
 		super.stop(context);
 	}
-	
+
 	public ArduinoLedDriver getArduinoDriver() {
 		return driver;
 	}
-
 
 	/**
 	 * Returns the shared instance

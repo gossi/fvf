@@ -23,6 +23,14 @@ public class DatabaseConnection {
 		return DatabaseConnection.instance;
 	}
 	
+	public boolean isConnected() {
+		try {
+			return !(connection == null || connection.isClosed());
+		} catch (SQLException e) {
+			return false;
+		}
+	}
+	
 	public Connection getConnection() {
 		return connection;
 	}
