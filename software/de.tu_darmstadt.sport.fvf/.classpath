@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry exported="true" kind="lib" path="bin/"/>
 	<classpathentry exported="true" kind="lib" path="lib/antlr-runtime-3.1.3.jar"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
@@ -8,6 +9,10 @@
 	<classpathentry exported="true" kind="lib" path="lib/sqljet-1.0.7.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/arduino-driver.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="lib/rxtx-2.1-7-bins-r2/RXTXcomm.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/rxtx-2.1-7-bins-r2/RXTXcomm.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://users.frii.com/jarvi/rxtx/doc/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -64,8 +64,8 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 		commander = (ICommandService) locator.getService(ICommandService.class);
 		
 		IWorkbenchPage page = getWindowConfigurer().getWindow().getActivePage();
-		statusManager.add(page.findView(PersonView.ID).getViewSite().getActionBars().getStatusLineManager());
-		
+		statusManager.add(page.findView(PersonView.ID).getViewSite().getActionBars().getStatusLineManager());		
+				
 		getWindowConfigurer().getWindow().getPartService().addPartListener(new IPartListener() {
 			public void partOpened(IWorkbenchPart part) {
 				if (part instanceof ResultView) {

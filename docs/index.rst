@@ -17,6 +17,7 @@ The contents of this manual:
    source/structure
    source/firmware
    source/driver
+   source/software
 
 .. _dev-docs:
 

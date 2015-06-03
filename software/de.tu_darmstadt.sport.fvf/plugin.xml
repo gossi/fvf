@@ -54,7 +54,7 @@
          </property>
          <property
                name="aboutText"
-               value="Programm zur Messung der Flimmer-Verschmelzungs-Frequenz.&#x0A;&#x0A;Ersteller:&#x0A;Thomas Gossmann&#x0A;Gerrit Kollegger&#x0A;Leonie Poetsch&#x0A;&#x0A;Icons:&#x0A;Silk von famfamfam - http://www.famfamfam.com/lab/icons/silk/&#x0A;Fugue von Yusuke Kamiyamane - http://p.yusukekamiyamane.com/&#x0A;&#x0A;Verwendete Bibliotheken:&#x0A;Eclipse RCP - http://eclipse.org/rcp&#x0A;Sormula ORM - http://sormula.org&#x0A;SQLite JDBC - http://www.xerial.org/trac/Xerial/wiki/SQLiteJDBC&#x0A;SQLJet - http://sqljet.com/">
+               value="Programm zur Messung der Flimmer-Verschmelzungs-Frequenz.&#x0A;&#x0A;Ersteller:&#x0A;Thomas Gossmann&#x0A;Gerrit Kollegger&#x0A;Leonie Poetsch&#x0A;&#x0A;Icons:&#x0A;Silk von famfamfam - http://www.famfamfam.com/lab/icons/silk/&#x0A;Fugue von Yusuke Kamiyamane - http://p.yusukekamiyamane.com/&#x0A;&#x0A;Verwendete Bibliotheken:&#x0A;Eclipse RCP - http://eclipse.org/rcp&#x0A;Sormula ORM - http://sormula.org&#x0A;SQLite JDBC - http://www.xerial.org/trac/Xerial/wiki/SQLiteJDBC&#x0A;SQLJet - http://sqljet.com/&#x0A;RXTX - http://rxtx.qbang.org">
          </property>
       </product>
    </extension>

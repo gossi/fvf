@@ -17,6 +17,16 @@ Components
 
 The software is spread across multiple components written in multiple programming languages:
 
-- Arduino Firmware (C++)
-- LED Driver (Java)
-- Client Software (Java)
+- Arduino :doc:`firmware` (C++)
+- LED :doc:`driver` (Java)
+- Client :doc:`software` (Java)
+
+Folders
+-------
+
+The folders and what they contain in this repository:
+
+- ``docs/`` - contains the source files for this documentation
+- ``driver/`` - contains the source files for the :doc:`driver`
+- ``firmware/`` - contains the sources files for the :doc:`firmware`
+- ``software/`` - contains the sources files for the :doc:`software`

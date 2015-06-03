@@ -24,10 +24,10 @@ public class DefaultPreferences extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.TEST_STOP_CRITERIA, 5);
 		store.setDefault(PreferenceConstants.TEST_LIGHT, 1);
 		store.setDefault(PreferenceConstants.TEST_DARK, 1);
-		
+
 		// visuals
-		store.setDefault(PreferenceConstants.VISUAL_HIGHLIGHT_FLICKER_LED, true);
-		store.setDefault(PreferenceConstants.VISUAL_ANIMATE_FLICKER_LED, true);
+		store.setDefault(PreferenceConstants.VISUAL_HIGHLIGHT_FLICKER_LED, false);
+		store.setDefault(PreferenceConstants.VISUAL_ANIMATE_FLICKER_LED, false);
 		PreferenceConverter.setDefault(store, PreferenceConstants.VISUAL_HIGHLIGHT_COLOR, Display.getDefault().getSystemColor(SWT.COLOR_RED).getRGB());
 		
 	}
