@@ -13,6 +13,20 @@ Protocol
 
 The driver implements the :doc:`../appendix/led-protocol`.
 
+Deployment
+----------
+
+The driver is deployed as ``*.jar`` file into the softwares ``lib/`` folder.
+
+.. image:: ../images/driver_export.*
+   :class: screen-400h
+
+.. image:: ../images/driver_export_dialog.*
+   :align: right
+   :class: screen-400h
+
+Note: This is not ideal and must be triggered manually. Better solutions are welcome.
+
 Remarks
 -------
 
