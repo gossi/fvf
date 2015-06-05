@@ -60,7 +60,9 @@ public class ArduinoLedDriverTest {
 			Method send = ArduinoLedDriver.class.getDeclaredMethod("send", String.class);
 			send.setAccessible(true);
 			send.invoke(driver, message);
-		} catch (NoSuchMethodException | SecurityException e) {
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
 			// TODO Auto-generated catch block
