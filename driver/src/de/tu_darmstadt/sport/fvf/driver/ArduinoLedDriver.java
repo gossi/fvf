@@ -26,7 +26,8 @@ public class ArduinoLedDriver {
 		"/dev/tty.usbmodem1431", 
 		"/dev/ttyACM0", // Raspberry Pi
 		"/dev/ttyUSB0", // Linux
-		"COM3", // Windows
+		"COM6", // Windows
+		"COM3"
 	};
 	
 	private static boolean DEBUG = false;
