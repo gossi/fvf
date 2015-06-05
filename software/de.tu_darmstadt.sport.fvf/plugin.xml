@@ -266,6 +266,28 @@
       <menuContribution
             locationURI="menu:org.eclipse.ui.main.menu">
          <menu
+               label="Datei">
+            <visibleWhen
+                  checkEnabled="false">
+               <not>
+                  <systemTest
+                        property="os.name"
+                        value="mac">
+                  </systemTest>
+               </not>
+            </visibleWhen>
+            <command
+                  commandId="org.eclipse.ui.window.preferences"
+                  label="Einstellungen"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit"
+                  style="push">
+            </command>
+         </menu>
+         <menu
                label="Datenbank">
             <command
                   commandId="de.tu_darmstadt.sport.fvf.commands.newdb"
@@ -279,15 +301,6 @@
                   label="Datenbank öffnen"
                   style="push">
             </command>
-            <command
-                  commandId="org.eclipse.ui.file.exit"
-                  label="Exit"
-                  style="push">
-            </command>
-         </menu>
-         <menu
-               id="de.tu_darmstadt.sport.fvf.menu.ports"
-               label="USB-Port">
          </menu>
       </menuContribution>
       <menuContribution
