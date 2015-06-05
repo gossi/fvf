@@ -46,7 +46,6 @@ public class FVF extends AbstractUIPlugin {
 			loader.initialize();
 		}
 		
-		
 		// uncomment next line for debug mode
 //		ArduinoLedDriver.setDebugMode(true);
 		

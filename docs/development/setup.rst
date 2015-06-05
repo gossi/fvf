@@ -13,9 +13,9 @@ Installing the Arduino IDE is straight forward. From the `Arduino Website`_ down
 Arduino Drivers
 ^^^^^^^^^^^^^^^
 
-Some systems require a manual driver installation for the Arduino Board. Please refer to the `Getting Started`_ from the Arduino website if this is required for you and how to get this done.
+Some systems require a manual driver installation for the Arduino board. Please refer to the `Getting Started Guide`_ from the Arduino website if this is required for you and how to get this done.
 
-.. _Getting Started: http://www.arduino.cc/en/Guide/HomePage
+.. _Getting Started Guide: http://www.arduino.cc/en/Guide/HomePage
 
 CoolTerm
 ^^^^^^^^
@@ -24,17 +24,41 @@ CoolTerm
 
 .. _CoolTerm: http://freeware.the-meiers.org/
 
+Install Git
+-----------
+
+Git is used as VCS and GitHub as repository master.
+
+Windows
+^^^^^^^
+
+Luckily GitHub provides an application with GUI to access git repositories. `Download GitHub for Windows`_ and install it; Clone the repo from GitHub and you are ready to go.
+
+.. _Download GitHub for Windows: https://windows.github.com/
+
+Mac
+^^^
+
+Also Mac got a GitHub app with GUI to access git repositories. `Download GitHub for Mac`_ and install it; Clone the repo from GitHub and you are ready to go.
+
+.. _Download GitHub for Mac: https://mac.github.com/
+
+Linux
+^^^^^
+
+You are on Linux, you know how to use your personal package manager to install yourself a git package and of course you can handle it from your favorite shell.
+
 Installing Eclipse
 ------------------
 
-Eclipse is the main development environment. A good start is the "`Eclipse for RCP and RAP Developers`_" package.
+Eclipse is the main development environment. A good start is to download the `Eclipse for RCP and RAP Developers`_ package.
 
 .. _Eclipse for RCP and RAP Developers: https://www.eclipse.org/downloads/
 
 Install PDE Tools
 ^^^^^^^^^^^^^^^^^
 
-To help and assist you with programming (Javadoc + proper code completion), install the following plugins from "The Eclipse Project and Updates" update site (http://download.eclipse.org/eclipse/updates/4.4 - replace "4.4" with the current version number):
+To help and assist you with programming (Javadoc + proper code completion), install the following plugins from "The Eclipse Project and Updates" update site (Help > Install New Software ... Update Site: http://download.eclipse.org/eclipse/updates/4.4 - replace "4.4" with the current version number):
 
 - Eclipse Plug-In Development Environment
 - Eclipse Platform SDK
@@ -51,7 +75,7 @@ Read here for installation: https://stackoverflow.com/a/12737382/483492
 Install Optional Tools
 ^^^^^^^^^^^^^^^^^^^^^^
 
-There are more useful plug-ins to support your development. They are available via the current releases update site (http://download.eclipse.org/releases/luna - replace "luna" with the current release):
+There are more useful plug-ins to support your development. They are available via the current releases update site (Help > Install New Software ... Update Site: http://download.eclipse.org/releases/luna - replace "luna" with the current release):
 
 - SWT Designer
 - Eclipse GIT Team provider

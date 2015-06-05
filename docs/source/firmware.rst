@@ -1,7 +1,7 @@
 Firmware
 ========
 
-The firmware runs on the Arduino Uno board. The board is connected via an Universal Serial Port (USB) to the host computer which runs the measurement software. It's main job is to handle incoming commands (via serial port) and send back feedback notifications.
+The firmware runs on the **Arduino Uno** board. The board is connected via an Universal Serial Port (USB) to the host computer which runs the measurement software. It's main job is to handle incoming commands (via serial port) and send back feedback notifications.
 
 Available Commands
 ------------------
