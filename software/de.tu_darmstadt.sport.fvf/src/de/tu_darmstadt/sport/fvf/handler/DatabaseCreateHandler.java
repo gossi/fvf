@@ -43,6 +43,9 @@ public class DatabaseCreateHandler extends AbstractHandler {
 			
 			IPreferenceStore store = FVF.getDefault().getPreferenceStore();
 			store.setValue(PreferenceConstants.DATABASE_LASTDB, file.getAbsolutePath());
+			
+			DatabaseOpenHandler opener = new DatabaseOpenHandler();
+			opener.open(file.getAbsolutePath());
 		}
 		return null;
 	}

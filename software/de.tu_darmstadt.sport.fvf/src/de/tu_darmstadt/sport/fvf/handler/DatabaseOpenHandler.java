@@ -27,20 +27,24 @@ public class DatabaseOpenHandler extends AbstractHandler {
 		if (path != null) {
 			File file = new File(path);
 			store.setValue(PreferenceConstants.DATABASE_LASTDB, file.getAbsolutePath());
-			DatabaseLoader.getInstance().setDatabase(file);
-			DatabaseLoader.getInstance().initialize();
-			
-			// load persons
-			PersonMap map = new PersonMap();
-			List<Person> model = map.selectAll();
-
-			PersonView persons = (PersonView)HandlerUtil.getActiveWorkbenchWindow(event).getActivePage().findView(PersonView.ID);
-			persons.getViewer().setInput(model);
-			
-			// close all result views
-			// TODO: how to get all views with ResultView.ID ?
+			open(path);
 		}
 		return null;
 	}
 
+	public void open(String path) {
+		File file = new File(path);
+		DatabaseLoader.getInstance().setDatabase(file);
+		DatabaseLoader.getInstance().initialize();
+		
+		// load persons
+		PersonMap map = new PersonMap();
+		List<Person> model = map.selectAll();
+
+		PersonView persons = (PersonView)FVF.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage().findView(PersonView.ID);
+		persons.getViewer().setInput(model);
+		
+		// close all result views
+		// TODO: how to get all views with ResultView.ID ?
+	}
 }
