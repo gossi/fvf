@@ -269,12 +269,14 @@
                label="Datei">
             <visibleWhen
                   checkEnabled="false">
-               <not>
-                  <systemTest
-                        property="os.name"
-                        value="mac">
-                  </systemTest>
-               </not>
+               <with
+                     variable="de.tu_darmstadt.sport.fvf.os">
+                  <not>
+                     <equals
+                           value="mac">
+                     </equals>
+                  </not>
+               </with>
             </visibleWhen>
             <command
                   commandId="org.eclipse.ui.window.preferences"
@@ -398,6 +400,13 @@
             provider="de.tu_darmstadt.sport.fvf.handler.ArduinoConnectionProvider">
          <variable
                name="de.tu_darmstadt.sport.fvf.arduinoConnected"
+               priorityLevel="workbench">
+         </variable>
+      </sourceProvider>
+      <sourceProvider
+            provider="de.tu_darmstadt.sport.fvf.handler.OSProvider">
+         <variable
+               name="de.tu_darmstadt.sport.fvf.os"
                priorityLevel="workbench">
          </variable>
       </sourceProvider>
