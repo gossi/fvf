@@ -36,6 +36,7 @@ The contents of this manual:
    :caption: Appendix
 
    appendix/led-protocol
+   appendix/erm
 
 .. _about-docs:
 

@@ -64,7 +64,9 @@ To help and assist you with programming (Javadoc + proper code completion), inst
 - Eclipse Platform SDK
 - Eclipse Java Development Tools
 
-Remark: Some of them might already be installed.
+Note: Some of them might already be installed.
+
+.. _setup-deltapack:
 
 Install Deployment Tools
 ^^^^^^^^^^^^^^^^^^^^^^^^

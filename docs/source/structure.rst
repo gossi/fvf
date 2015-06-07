@@ -1,15 +1,14 @@
 Structure
 =========
 
-The FVF measurement system is spread across various pieces and components. Learn here what these parts are.
-
+The FVF measurement system is spread across various pieces and components.
 Pieces
 ------
 
 The FVF measurement system consists of multiple pieces:
 
 - Tube
-- Hardware LED controller (Arduino One)
+- Hardware LED controller (Arduino Uno)
 - Client Software
 
 Components

@@ -6,7 +6,7 @@ The LED driver is a Java API to send commands to the :doc:`firmware` and getting
 Communication
 -------------
 
-The client software talks to the Arduino board through a serial port connection. For this purpose the RXTX interface is used.
+The client software talks to the Arduino board through a serial port connection. For this purpose the RXTX interface is used. In order to check whether the connection is still established, the driver periodically sends a ping to the board. Once this connection is interrupted for several reasons, it's assumed the connection is dead.
 
 Protocol
 --------
@@ -57,6 +57,13 @@ Luckily there is a 64-bit version available, forged by `Robert Harder`_. The ecl
 
 .. _Robert Harder: http://blog.iharder.net/2009/08/18/rxtx-java-6-and-librxtxserial-jnilib-on-intel-mac-os-x/
 
+
+Disconnecting
+^^^^^^^^^^^^^
+
+There are some problems between RXTX and properly disconnecting connections. The problems are described in a `forum thread`_. The mentioned hacks are implemented precautionally. Probably RXTX version 2.2 should have these issues resolved, yet wasn't available stable at the time of implementation.
+
+.. _forum thread: http://archive.infiniteautomation.com/forum/posts/list/297.page
 
 References
 ----------
