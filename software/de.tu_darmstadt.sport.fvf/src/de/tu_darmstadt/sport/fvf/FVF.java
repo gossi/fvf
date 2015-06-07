@@ -48,10 +48,10 @@ public class FVF extends AbstractUIPlugin {
 		
 		// uncomment next line for debug mode
 //		ArduinoLedDriver.setDebugMode(true);
-		
+
 		// start connections
 		try {
-			driver.connect();
+			driver.connect(store.getString(PreferenceConstants.ARDUINO_LASTPORT));
 		} catch (Exception e) {
 		}
 	}

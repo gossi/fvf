@@ -3,8 +3,10 @@ package de.tu_darmstadt.sport.fvf;
 public interface PreferenceConstants {
 	
 	final public static String DATABASE_REMEMBER	= "database.rememberLastOpened";
+	
 	final public static String DATABASE_LASTDB		= "database.lastOpened";
-
+	
+	final public static String ARDUINO_LASTPORT		= "arduino.lastPort";
 	/**
 	 * LEDS
 	 */

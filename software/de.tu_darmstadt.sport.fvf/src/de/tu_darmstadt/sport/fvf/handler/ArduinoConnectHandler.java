@@ -10,12 +10,14 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.commands.IElementUpdater;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.handlers.RadioState;
 import org.eclipse.ui.menus.UIElement;
 
 import de.tu_darmstadt.sport.fvf.FVF;
+import de.tu_darmstadt.sport.fvf.PreferenceConstants;
 import de.tu_darmstadt.sport.fvf.driver.ArduinoLedDriver;
 
 public class ArduinoConnectHandler extends AbstractHandler implements IElementUpdater {
@@ -27,12 +29,16 @@ public class ArduinoConnectHandler extends AbstractHandler implements IElementUp
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
 		final ArduinoLedDriver driver = FVF.getDefault().getArduinoDriver();
+		final IPreferenceStore store = FVF.getDefault().getPreferenceStore();
 		
 		try {
 			counter = new CountDownLatch(1);
 			new Thread(new Runnable() {
 				public void run() {
 					String port = event.getParameter(RadioState.PARAMETER_ID);
+					if (port == null) {
+						port = store.getString(PreferenceConstants.ARDUINO_LASTPORT);
+					}
 					
 					try {
 						driver.connect(port);
@@ -57,6 +63,9 @@ public class ArduinoConnectHandler extends AbstractHandler implements IElementUp
 
 		String port = driver.isConnected() ? driver.getPortName() : null;
 		HandlerUtil.updateRadioState(event.getCommand(), port);
+		
+		// store last port
+		store.setValue(PreferenceConstants.ARDUINO_LASTPORT, port);
 		
 		return null;
 	}
