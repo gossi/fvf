@@ -1,12 +1,14 @@
-.. FVF Manual documentation master file, created by
-   sphinx-quickstart on Tue Jun  9 16:04:21 2015.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+FVF Handbuch
+============
 
-Welcome to FVF Manual's documentation!
-======================================
+Flimmer-Verschmelzungs-Frequenz Messapparatur:
 
-Contents:
+.. image:: screenshots/start.*
+   :class: screen-400h
+   :height: 400px
+
+
+Inhaltsverzeichnis:
 
 .. toctree::
    :maxdepth: 2
@@ -15,4 +17,3 @@ Contents:
    database
    probands
    tests
-   
