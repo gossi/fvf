@@ -1,2 +1,31 @@
 Testpersonen
 ============
+
+Anlegen einer Testperson
+------------------------
+Nach dem Starten des Programms kann durch einen Klick auf das Symbol links in der Menüleiste eine neue Testperson angelegt werden.
+Es öffnet sich ein Fenster wie in der nachfolgenden Abbildung dargstellt, in dem die geforderten Benutzerdaten eingebegeben werden müssen wie in Abbildung dargstellt.
+
+.. image:: screenshots/Person_dialog.*
+
+Nach dem Eintragen der Daten werden diese mit dem OK- Button bestätigt. Anschließend erscheint die angelegte Testperson auf der linken Seite und kann nun ausgewählt werden.
+
+.. image:: screenshots/Person_created.*
+
+Bearbeiten der Daten einer Testperson
+-------------------------------------
+
+Durch einen Klick auf das Symbol in der Mitte, öffnet sich ein Fenster, in dem die eingegeben Daten einer Testperson bearbeitet werden können.
+
+.. image:: screenshots/Person_edit.*
+
+Löschen einer Testperson
+------------------------
+Durch das Auswählen des Symbols rechts kann eine Testperson gelöscht werden. Durch einen Klick auf das Symbol zum Löschen erscheint wiederum das Fenster mit den Benutzerdaten durch das Drücken des Cancel- Buttons wird die Testperson gelöscht.
+
+
+Daten einer Testperson
+----------------------
+Die Testdaten einer Person können durch einen Doppelklick auf die Testperson angeschaut werden. Durch den Doppelklick öffnet sich ein Tab, in dem alle Testdaten eingesehen werden können.
+
+.. image:: screenshots/Person_opened.*
