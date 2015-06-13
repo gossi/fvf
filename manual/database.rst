@@ -1,12 +1,12 @@
 Datenbank
 =========
 
+Datenbanken sind Dateien mit der Endung ``*.db``.
+
 Datenbank anlegen
 -----------------
-Unter den Menüpunkten "Datenbank" und "Datenbank anlegen" kann eine neue Datenbank angelegt werden.
-
-.. image:: screenshots/start.*
+Unter den Menüpunkten "Datenbank > Datenbank anlegen" kann eine neue Datenbank angelegt werden.
 
 Datenbank öffnen
 ----------------
-Zum Öffnen der Datenbank werden im Menü erst der Eintrag "Datenbank", "Datenbank öffnen" und die gewünschte Datei ausgewählt.
+Zum Öffnen der Datenbank im Menü "Datenbank > Datenbank öffnen" anklicken und die gewünschte Datei auswählen.
