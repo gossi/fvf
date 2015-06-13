@@ -1,12 +1,15 @@
 Welcome to the FVF Measurement System Documentation
 ===================================================
 
-TODO:
+The Flicker Fusion Frequency (FVF) is used to measure central nervous activation. This is the technical documentation for the measurement system. Reach for the `manual`_ on how to run your own tests.
 
-- What is the FVF measurement system
-- Who built this (TUD IFS)
+.. _manual: https://fvf-manual.readthedocs.org
 
-The contents of this manual:
+The `FVF measurement system`_ is created at the Institute for Sport Science at Technical University Darmstadt, see the :doc:`about/authors`.
+
+.. _FVF measurement system: http://www.sport.tu-darmstadt.de/sportinstitut/personal/professoren/wiemeyer_seiten/forschung_detail/forschung_flimmerverschmelzungsfrequenz.de.jsp
+
+Table of contents:
 
 .. _source-docs:
 
@@ -44,4 +47,6 @@ The contents of this manual:
    :maxdepth: 1
    :caption: About
 
+   about/authors
    license
+   about/follow-ups
