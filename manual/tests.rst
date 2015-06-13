@@ -22,8 +22,7 @@ Gestartet wird der Test durch den Button "Start" und abgebrochen werden kann er 
 
  .. image:: screenshots/testrunner_running.*
 
- Nach Ende des Testlaufs sind alle Glühbirnen der Antwortbuttons rot gefärbt und der Versuchsleiter kann die Antwort des Probanden eingeben und die Eingabe mit dem "Speichern"- Button
- bestätigen. Außerdem kann jederzeit am Testprotokoll abgelesen werden welche LEDs in den vorherigen Testdurchläufen geflimmert haben, was die Antwort des Probanden war und ob diese richtig war.
+ Nach Ende des Testlaufs sind alle Glühbirnen der Antwortbuttons rot gefärbt und der Versuchsleiter kann die Antwort des Probanden eingeben. Außerdem kann jederzeit am Testprotokoll abgelesen werden welche LEDs in den vorherigen Testdurchläufen geflimmert haben, was die Antwort des Probanden war und ob diese richtig war.
 
  .. image:: screenshots/testrunner_waiting.*
 
