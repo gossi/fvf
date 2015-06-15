@@ -1,8 +1,8 @@
 Test-Ergebnisse
 ===============
-Nach Auswahl der Testperson in der Datenbank (wie in Kapitel Datenbank beschrieben) erscheint ein Tab mit allen Daten zu der ausgewählten Testperson.
-Dargstellt sind alle durchgeführten Tests und deren Ergebnisse. Durch Auswahl des gewünschten Tests und dem Fensters "Parameter" können sich die eingestellten
-Parameter des durchgeführten Tests angeschaut werden.
+
+Durch Doppelklicken auf eine Testperson öffnet ein Tab mit allen Daten zu der ausgewählten Testperson.
+Dargstellt sind alle durchgeführten Tests und deren Ergebnisse. Durch Auswahl des gewünschten Tests und dem Fensters "Parameter" können sich die eingestellten Parameter des durchgeführten Tests angeschaut werden.
 
 .. image:: screenshots/results_parameter.*
 
