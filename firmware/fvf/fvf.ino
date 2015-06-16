@@ -95,7 +95,7 @@ void parseCommand(String cmd) {
     }
     
     // set default light:dark ratio
-    if (p < 4) {
+    if (p <= 4) {
       params[5] = "1";
       params[6] = "1";
     }
@@ -123,7 +123,7 @@ void parseCommand(String cmd) {
     }
     
     // set default light:dark ratio
-    if (p < 2) {
+    if (p <= 2) {
       params[3] = "1";
       params[4] = "1";
     }
