@@ -5,11 +5,6 @@ Das Handbuch zur Flimmer-Verschmelzungs-Frequenz Messapparatur. Die FVF Messappa
 
 .. _technische Dokumentation: https://fvf.readthedocs.org
 
-.. image:: screenshots/start.*
-   :class: screen-400h
-   :height: 400px
-
-
 Inhaltsverzeichnis:
 
 .. toctree::
