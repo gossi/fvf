@@ -60,3 +60,8 @@ Instructions to setup your own FVF measurement system
 -----------------------------------------------------
 
 Instructions to setup one's own FVF measurement system. With technical specifications of the tube and the oculus adapter to connecting the software. Likewise a step-by-step manual for a self-construction-kit.
+
+Port to eclipse e4
+------------------
+
+For historical reasons, the software is built on eclipse e3 API. At the time of writing, e4 is the current API and contains modern programming approaches to simply development. It can be worth to port the codebase to the new e4 API.

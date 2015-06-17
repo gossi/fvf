@@ -48,5 +48,6 @@ Table of contents:
    :caption: About
 
    about/authors
+   about/contribute
    license
    about/follow-ups
