@@ -141,6 +141,16 @@ void parseCommand(String cmd) {
     }
     return;
   }
+  
+  else if (command == "calibrate") {
+    for (int i = 10; i <= 60; i++) {
+      Serial.print(i);
+      Serial.println("Hz");
+      ledFlicker(1, i, 5000, 1, 1);
+      ledOff(1);
+      delay(1000);
+    }
+  }
       
   return error(2);
 }
@@ -203,13 +213,17 @@ void ledsOff(int mode) {
  * @param dark the dark ratio part
  */
 void ledFlicker(int led, float frequency, int duration, int light, int dark) {
+  //Serial.print("Flicker Frequency: ");
+  //Serial.println(frequency, 4);
   // transform hz to ms for one cycle
-  float cycleTime = 1 / frequency * 1000;
-  int timePassed = 0;
+  double cycleTime = 1 / frequency * 1000;
+  double timePassed = 0;
   int on = false;
-  float onDuration = (float)light / ((float)light + (float)dark) * cycleTime;
-  float offDuration = (float)dark / ((float)light + (float)dark) * cycleTime;
-  int halfCycleTime = 0;
+  double onDuration = (double)light / ((double)light + (double)dark) * cycleTime;
+  double offDuration = (double)dark / ((double)light + (double)dark) * cycleTime;
+  double halfCycleTime = 0;
+
+  double lastCycle = 0;
   
   while (timePassed < duration) {
     if (on) {
@@ -221,12 +235,23 @@ void ledFlicker(int led, float frequency, int duration, int light, int dark) {
     }
     
     on = !on;
-    
-    int cycle = timePassed + halfCycleTime > duration ? duration - timePassed : halfCycleTime;
+
+    double cycle = timePassed + halfCycleTime > duration ? duration - timePassed : halfCycleTime;
     timePassed += cycle;
     
-    delay(cycle);
+    // see: http://www.arduino.cc/en/Reference/DelayMicroseconds
+    if (cycle * 1000 > 16383) {
+      delay(cycle);
+    } else {
+      delayMicroseconds(cycle * 1000);
+    }
+    
+    if (timePassed + halfCycleTime <= duration) {
+      lastCycle = cycle;
+    }
   }
+  
+  //Serial.println(lastCycle);
 }
 
 /**
