@@ -28,7 +28,7 @@ References
 Verification
 ------------
 
-These verification measurement has been done with @TODO multimeter.
+These verification measurement has been done with VOLTCRAFT Universal SYSTEM MS-9150 Frequency Counter .
 
 An important Note: The `delay()`_ method on the Arduino passes the delay in integer values, no floats are possible. For every milliseconds below 16383, `delayMicroseconds()`_ must be used. The gap happens between 30Hz and 31Hz.
 
