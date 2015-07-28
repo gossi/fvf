@@ -10,8 +10,10 @@ Inhaltsverzeichnis:
 .. toctree::
    :maxdepth: 2
 
+   introduction
    installation
    database
    probands
    tests
    results
+   references
