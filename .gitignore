@@ -1,3 +1,11 @@
 bin
 docs/_build
 manual/_build
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+manual/tud-latex/fvf-manual.pdf
+*.gz
+*.toc
