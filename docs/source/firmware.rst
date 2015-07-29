@@ -28,12 +28,22 @@ References
 Verification
 ------------
 
-These verification measurement has been done with VOLTCRAFT Universal SYSTEM MS-9150 Frequency Counter .
+To ensure the flickering frequency a verification measurement has been done with VOLTCRAFT Universal SYSTEM MS-9150 Frequency Counter.
 
 An important Note: The `delay()`_ method on the Arduino passes the delay in integer values, no floats are possible. For every milliseconds below 16383, `delayMicroseconds()`_ must be used. The gap happens between 30Hz and 31Hz.
 
 .. _delay(): http://www.arduino.cc/en/Reference/Delay
 .. _delayMicroseconds(): http://www.arduino.cc/en/Reference/DelayMicroseconds
+
+Methodology
+^^^^^^^^^^^
+
+Voltage has been captured at the pins directly at the measured LED. Each frequency was measured two times and the latter value was used.
+
+Note: Prior sample measurements showed, the value didn't changed after the second measurement for each frequency.
+
+Results
+^^^^^^^
 
 +-----------+--------------------+---------+
 | Frequency | Measured Frequency | Offset  |
@@ -134,3 +144,7 @@ An important Note: The `delay()`_ method on the Arduino passes the delay in inte
 +-----------+--------------------+---------+
 | 500Hz     | 468,991            | -32,009 |
 +-----------+--------------------+---------+
+
+The next graph shows the scattering of the measured values around the expected linear ideal values. 
+
+.. image:: ../images/firmware-verification.*

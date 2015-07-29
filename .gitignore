@@ -9,3 +9,5 @@ manual/_build
 manual/tud-latex/fvf-manual.pdf
 *.gz
 *.toc
+
+docs/tud-latex/fvf-docs.pdf

@@ -1,7 +1,8 @@
 Structure
 =========
 
-The FVF measurement system is spread across various pieces and components.
+The FVF measurement system is split into various pieces and components.
+
 Pieces
 ------
 
@@ -14,7 +15,7 @@ The FVF measurement system consists of multiple pieces:
 Components
 ----------
 
-The software is spread across multiple components written in multiple programming languages:
+The software consists of multiple components written in multiple programming languages:
 
 - Arduino :doc:`firmware` (C++)
 - LED :doc:`driver` (Java)
@@ -29,3 +30,4 @@ The folders and what they contain in this repository:
 - ``driver/`` - contains the source files for the :doc:`driver`
 - ``firmware/`` - contains the sources files for the :doc:`firmware`
 - ``software/`` - contains the sources files for the :doc:`software`
+- ``manual/`` - contains the sources files for the manual

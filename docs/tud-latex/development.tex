@@ -1,0 +1,172 @@
+\part{Developer}
+
+\chapter{Setup}
+\label{development/setup:fugue}\label{development/setup:setup}\label{development/setup::doc}
+Learn how to setup your development environment for FVF.
+
+
+\section{Installing Arduino}
+\label{development/setup:installing-arduino}
+Installing the Arduino IDE is straight forward. From the \href{http://www.arduino.cc/en/Main/Software}{Arduino Website} download the Arduino IDE for your platform and open \code{firmware/fvf/fvf.ino} to start your firmware development.
+
+
+\subsection{Arduino Drivers}
+\label{development/setup:arduino-drivers}\label{development/setup:arduino-website}
+Some systems require a manual driver installation for the Arduino board. Please refer to the \href{http://www.arduino.cc/en/Guide/HomePage}{Getting Started Guide} from the Arduino website if this is required for you and how to get this done.
+
+
+\subsection{CoolTerm}
+\label{development/setup:coolterm}\label{development/setup:getting-started-guide}
+\href{http://freeware.the-meiers.org/}{CoolTerm} is a simple serial port terminal application. CoolTerm can be used to send commands to the Arduino Board and test your firmware.
+
+
+\section{Install Git}
+\label{development/setup:install-git}\label{development/setup:id1}
+Git is used as VCS and GitHub as repository master.
+
+
+\subsection{Windows}
+\label{development/setup:windows}
+Luckily GitHub provides an application with GUI to access git repositories. \href{https://windows.github.com/}{Download GitHub for Windows} and install it; Clone the repo from GitHub and you are ready to go.
+
+
+\subsection{Mac}
+\label{development/setup:download-github-for-windows}\label{development/setup:mac}
+Also Mac got a GitHub app with GUI to access git repositories. \href{https://mac.github.com/}{Download GitHub for Mac} and install it; Clone the repo from GitHub and you are ready to go.
+
+
+\subsection{Linux}
+\label{development/setup:download-github-for-mac}\label{development/setup:linux}
+You are on Linux, you know how to use your personal package manager to install yourself a git package and of course you can handle it from your favorite shell.
+
+
+\section{Installing Eclipse}
+\label{development/setup:installing-eclipse}
+Eclipse is the main development environment. A good start is to download the \href{https://www.eclipse.org/downloads/}{Eclipse for RCP and RAP Developers} package.
+
+
+\subsection{Install PDE Tools}
+\label{development/setup:install-pde-tools}\label{development/setup:eclipse-for-rcp-and-rap-developers}
+To help and assist you with programming (Javadoc + proper code completion), install the following plugins from ``The Eclipse Project and Updates'' update site (Help \textgreater{} Install New Software ... Update Site: \href{http://download.eclipse.org/eclipse/updates/4.4}{http://download.eclipse.org/eclipse/updates/4.4} - replace ``4.4'' with the current version number):
+\begin{itemize}
+\item {} 
+Eclipse Plug-In Development Environment
+
+\item {} 
+Eclipse Platform SDK
+
+\item {} 
+Eclipse Java Development Tools
+
+\end{itemize}
+
+Note: Some of them might already be installed.
+
+
+\subsection{Install Deployment Tools}
+\label{development/setup:setup-deltapack}\label{development/setup:install-deployment-tools}
+To deploy the FVF application bundle to multiple platforms the eclipse ``DeltaPack'' is required for this.
+Read here for installation: \href{https://stackoverflow.com/a/12737382/483492}{https://stackoverflow.com/a/12737382/483492}
+
+
+\subsection{Install Optional Tools}
+\label{development/setup:install-optional-tools}
+There are more useful plug-ins to support your development. They are available via the current releases update site (Help \textgreater{} Install New Software ... Update Site: \href{http://download.eclipse.org/releases/luna}{http://download.eclipse.org/releases/luna} - replace ``luna'' with the current release):
+\begin{itemize}
+\item {} 
+SWT Designer
+
+\item {} 
+Eclipse GIT Team provider
+
+\end{itemize}
+
+
+\chapter{Deployment}
+\label{development/deployment::doc}\label{development/deployment:deployment}
+This page describes, how to deploy your own version of the measurement software.
+
+
+\section{Required Plugins}
+\label{development/deployment:required-plugins}
+Since this is an e3 Plug-In deployed in an e4 environment all required \href{https://www.eclipse.org/community/eclipse\_newsletter/2013/february/article3.php\#compatibiliylayer\_plugins}{compatibility layer plugins} must be added.
+
+
+\section{Export the RCP application}
+\label{development/deployment:export-the-rcp-application}\label{development/deployment:compatibility-layer-plugins}
+Open the \code{fvf.product} file in eclipse. On the \emph{Overview} page there is the export section with a link to open the ``Eclipse Product export wizard'' (which is also available from the toolbar of this editor). Make sure to check ``Export for multiple platforms'' (which is only available if you followed the {\hyperref[development/setup:setup-deltapack]{\emph{Install Deployment Tools}}} instructions) and ``Synchronize before exporting''. Click ``Next'' which shows the available platforms to deploy to.
+
+
+\chapter{Documentation}
+\label{development/documentation:documentation}\label{development/documentation::doc}
+The process of writing documentation is also known as \emph{continuous documentation}. The raw source files are written in \href{http://docutils.sourceforge.net/rst.html}{reStructuredText} and \href{http://sphinx-doc.org}{Sphinx} is used to generate the documentation in various formats. \href{http://readthedocs.org}{Read the Docs} hosts this documentation.
+
+
+\chapter{Follow-Up Projects}
+\label{development/follow-ups::doc}\label{development/follow-ups:sphinx}\label{development/follow-ups:follow-up-projects}
+Some ideas for follow-up projects.
+
+
+\section{Automated Builds}
+\label{development/follow-ups:automated-builds}
+Currently deploying the software is a manual job. It would be more pleasant to have automated builds. This especially means two tasks:
+\begin{enumerate}
+\item {} 
+Driver and FVF are two independent projects right now, which means deploying the driver first to use it from FVF, it would be way easier to just refer to the driver project instead.
+
+\item {} 
+Deploy the software (with all it's required libs). Either automatically, by committing, tagging a release or trigger the build manually.
+
+\end{enumerate}
+
+For option \#2 (continuous deployment) there are some online services available, which must be checked individually if they are eligible for the task on hand:
+\begin{itemize}
+\item {} 
+\href{https://semaphoreci.com}{semaphore}
+
+\item {} 
+\href{https://codeship.com}{codeship}
+
+\item {} 
+\href{http://dploy.io}{dploy}
+
+\item {} 
+\href{https://drone.io}{drone.io}
+
+\item {} 
+\href{https://circleci.com}{circleci}
+
+\end{itemize}
+
+Additionally, there must be found a good place to distribute binaries to.
+
+
+\section{Streamline Web Presence}
+\label{development/follow-ups:streamline-web-presence}
+The current web presence is cluttered among this \href{https://fvf.readthedocs.org}{docs} and the \href{https://fvf-manual.readthedocs.org}{manual}. A formal webpage introducing FVF, what it is, who is responsible for that, where to download, how to contribute and contains links to the docs and manual is missing. Probably \href{https://pages.github.com}{GitHub pages} are a solution to island this or possibly put this up on the \href{http://www.sport.tu-darmstadt.de}{IFS website}.
+
+
+\section{Internationalization (i18n)}
+\label{development/follow-ups:internationalization-i18n}\label{development/follow-ups:ifs-website}
+Right now, the docs are in english, software and manual are in german. All tools within the toolchain support internationalization. This can be used to better translate all occurring strings. \href{https://www.transifex.com}{Transifex} is an online service to keep track of all translations, which can be used as a managing instance. There is even an integration between Transifex and Sphinx, to \href{http://sphinx-doc.org/intl.html}{translate docs}.
+
+
+\section{Self-Validation}
+\label{development/follow-ups:self-validation}\label{development/follow-ups:translate-docs}
+A self-validation routine built into the {\hyperref[source/firmware::doc]{\emph{\emph{Firmware}}}} that averages the deviation for each frequency and applies it during the measurement routine.
+
+
+\section{Post-Processing of Results}
+\label{development/follow-ups:post-processing-of-results}
+The results can receive some post-processing by either showing statistics and displaying graphs or providing exports to various formats for further processing, e.g. exporting to SPS.
+
+
+\section{Instructions to setup your own FVF measurement system}
+\label{development/follow-ups:instructions-to-setup-your-own-fvf-measurement-system}
+Instructions to setup one's own FVF measurement system. With technical specifications of the tube and the oculus adapter to connecting the software. Likewise a step-by-step manual for a self-construction-kit.
+
+
+\section{Port to eclipse e4}
+\label{development/follow-ups:port-to-eclipse-e4}
+For historical reasons, the software is built on eclipse e3 API. At the time of writing, e4 is the current API and contains modern programming approaches to simply development. It can be worth to port the codebase to the new e4 API.
+\phantomsection\label{index:appendix-docs}

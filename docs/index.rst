@@ -11,6 +11,17 @@ The `FVF measurement system`_ is created at the Institute for Sport Science at T
 
 Table of contents:
 
+
+.. _about-docs:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: About
+
+   about/authors
+   about/license
+   about/contribute
+
 .. _source-docs:
 
 .. toctree::
@@ -31,6 +42,7 @@ Table of contents:
    development/setup
    development/deployment
    development/documentation
+   development/follow-ups
 
 .. _appendix-docs:
 
@@ -40,14 +52,3 @@ Table of contents:
 
    appendix/led-protocol
    appendix/erm
-
-.. _about-docs:
-
-.. toctree::
-   :maxdepth: 1
-   :caption: About
-
-   about/authors
-   about/contribute
-   license
-   about/follow-ups

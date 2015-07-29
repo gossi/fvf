@@ -116,7 +116,7 @@ Send when a led is turned on (or flickering, when measurement command was used):
 flicker
 ^^^^^^^
 
-Send when a led is flickering:
+Send when a led is flickering::
 
   flicker [led]
 

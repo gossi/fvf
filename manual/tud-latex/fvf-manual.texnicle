@@ -82,45 +82,27 @@
         <relationship name="selected" type="1/1" destination="FILE" idrefs="z106"></relationship>
         <relationship name="settings" type="1/1" destination="SETTINGS" idrefs="z102"></relationship>
         <relationship name="uisettings" type="1/1" destination="UISETTINGS" idrefs="z104"></relationship>
-        <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z105 z106"></relationship>
+        <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z106"></relationship>
     </object>
     <object type="UISETTINGS" id="z104">
-        <attribute name="pdfviewscrollrect" type="string">{{5.644579877961752e-14, 13536.150515473182}, {604, 912.84948452681783}}</attribute>
+        <attribute name="pdfviewscrollrect" type="string">{{0, 13618.196721311819}, {603.99999999997465, 830.49999999969259}}</attribute>
         <attribute name="showpdfthumbnails" type="bool">0</attribute>
-        <attribute name="selectedcontrolstab" type="int16">6</attribute>
+        <attribute name="selectedcontrolstab" type="int16">0</attribute>
         <attribute name="maxoutlinedepth" type="int16">7</attribute>
         <attribute name="logoutputlevel" type="int16">0</attribute>
-        <attribute name="editorwidth" type="float">716</attribute>
+        <attribute name="editorwidth" type="float">713</attribute>
         <attribute name="controlswidth" type="float">220</attribute>
         <attribute name="consoleview" type="int16">0</attribute>
         <relationship name="project" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
     </object>
-    <object type="TEXFILE" id="z105">
-        <attribute name="wasopen" type="bool">0</attribute>
-        <attribute name="visiblerect" type="string">{{0, 0}, {683, 667}}</attribute>
-        <attribute name="lasteditdate" type="date">459810684.38214802742004394531</attribute>
-        <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">459810916.08959001302719116211</attribute>
-        <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{592, 27}</attribute>
-        <attribute name="sortindex" type="int32">0</attribute>
-        <attribute name="name" type="string">FVFManual.tex</attribute>
-        <attribute name="isexpanded" type="bool">0</attribute>
-        <attribute name="filepath" type="string">./FVFManual.tex</attribute>
-        <relationship name="parent" type="1/1" destination="PROJECTITEM"></relationship>
-        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
-        <relationship name="mainfileofproject" type="1/1" destination="PROJECT"></relationship>
-        <relationship name="children" type="0/0" destination="PROJECTITEM"></relationship>
-        <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
-    </object>
     <object type="TEXFILE" id="z106">
-        <attribute name="wasopen" type="bool">1</attribute>
-        <attribute name="visiblerect" type="string">{{0, 4831}, {673, 667}}</attribute>
-        <attribute name="lasteditdate" type="date">459814728.72182101011276245117</attribute>
+        <attribute name="wasopen" type="bool">0</attribute>
+        <attribute name="visiblerect" type="string">{{0, 0}, {676, 630}}</attribute>
+        <attribute name="lasteditdate" type="date">459882676.17372798919677734375</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">459814729.10558897256851196289</attribute>
+        <attribute name="fileloaddate" type="date">459882676.58430302143096923828</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{12916, 0}</attribute>
+        <attribute name="cursor" type="string">{183, 0}</attribute>
         <attribute name="sortindex" type="int32">0</attribute>
         <attribute name="name" type="string">fvf-manual.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>
