@@ -65,7 +65,7 @@
         <attribute name="showstatusbar" type="bool">1</attribute>
         <attribute name="outputdirectory" type="string"></attribute>
         <attribute name="openconsole" type="bool">0</attribute>
-        <attribute name="ncompile" type="int16">1</attribute>
+        <attribute name="ncompile" type="int16">2</attribute>
         <attribute name="language" type="string">de</attribute>
         <attribute name="enginename" type="string">pdflatex</attribute>
         <attribute name="dops2pdf" type="bool">1</attribute>
@@ -85,7 +85,7 @@
         <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z106"></relationship>
     </object>
     <object type="UISETTINGS" id="z104">
-        <attribute name="pdfviewscrollrect" type="string">{{0, 13618.196721311819}, {603.99999999997465, 830.49999999969259}}</attribute>
+        <attribute name="pdfviewscrollrect" type="string">{{0, 16093.856557377243}, {604, 904.14344262275699}}</attribute>
         <attribute name="showpdfthumbnails" type="bool">0</attribute>
         <attribute name="selectedcontrolstab" type="int16">0</attribute>
         <attribute name="maxoutlinedepth" type="int16">7</attribute>
@@ -97,12 +97,12 @@
     </object>
     <object type="TEXFILE" id="z106">
         <attribute name="wasopen" type="bool">0</attribute>
-        <attribute name="visiblerect" type="string">{{0, 0}, {676, 630}}</attribute>
-        <attribute name="lasteditdate" type="date">459882676.17372798919677734375</attribute>
+        <attribute name="visiblerect" type="string">{{0, 5527}, {685, 707}}</attribute>
+        <attribute name="lasteditdate" type="date">461490043.84250700473785400391</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">459882676.58430302143096923828</attribute>
+        <attribute name="fileloaddate" type="date">461490061.99664998054504394531</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{183, 0}</attribute>
+        <attribute name="cursor" type="string">{14543, 0}</attribute>
         <attribute name="sortindex" type="int32">0</attribute>
         <attribute name="name" type="string">fvf-manual.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>

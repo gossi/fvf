@@ -292,23 +292,43 @@ Zum Starten eines neuen Tests wird ``Neuer Test'' ausgewählt und es erscheint e
 \label{tests:test-durchfuhren}\label{tests:test-run}
 Nach Eingabe der Testparamter kann der Test gestartet werden. Dies geschieht durch den Button \texttt{Start} Die Antwortmöglichkeiten des Probanden können wie oben beschrieben eingegeben werden. Der Test kann jederzeit über den Button \texttt{Abbruch} abgebrochen werden, die Ergebnisse werden dann aber nicht gespeichert.
 
-\includegraphics[width=\textwidth]{testrunner_dialog.png}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{testrunner_dialog.png}
+	\label{fig:testrunner-dialog}
+	\caption{Testdurchlauf: starten}
+\end{figure}
 
 Nach dem Starten des Tests erscheint ein Fragezeichen beim jeweiligen Testdurchlauf.
 
-\includegraphics[width=\textwidth]{testrunner_running.png}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{testrunner_running.png}
+	\label{fig:testrunner-running}
+	\caption{Testdurchlauf: Erste Frequenz wird gemessen}
+\end{figure}
 
-Nach Ende des Messzykluses sind alle LEDs und der Antwortbuttons rot gefärbt und der Versuchsleiter kann die Antwort des Probanden eingeben.
 
-\includegraphics[width=\textwidth]{testrunner_waiting.png}
+Nach Ende des Messzyklusses sind alle LEDs und der Antwortbuttons rot gefärbt und der Versuchsleiter kann die Antwort des Probanden eingeben.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{testrunner_waiting.png}
+	\label{fig:testrunner-waiting}
+	\caption{Testdurchlauf: Warte auf Eingabe des Versuchsleiters}
+\end{figure}
 
 
 \subsection{Falsche Eingabe des Probanden}
 \label{tests:falsche-eingabe-des-probanden}
 Bei einer falschen Angabe des Probanden hat der Versuchsleiter mehrere Optionen wie er nun vorgehen möchte. Entweder die Buttons mit der Maus klicken oder die Taste mit dem in der eckigen Klammer stehenden Buchstaben drücken (\texttt{Q} für ``Weiter'', \texttt{W} für ``Weiter ohne Fehler'', \texttt{E} für ``Neustart'', \texttt{R} für ``Neustart mit aktueller Frequenz'').
 
-\includegraphics[width=\textwidth]{testrunner_wronganswer.png}
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{testrunner_wronganswer.png}
+	\label{fig:testrunner-waiting}
+	\caption{Testdurchlauf: Falsche Angabe des Probanden}
+\end{figure}
 
 \subsection{Der Proband kann keine flimmernde LED benennen}
 \label{tests:der-proband-kann-keine-flimmernde-led-benennen}
@@ -319,7 +339,12 @@ Wenn der Proband keine flimmernde LED mehr wahrnehmen kann und dies auch entspre
 \label{tests:test-beenden}
 Der Test ist beendet, wenn der Proband mehr falsche Antworten gegeben hat als vereinbart sind (Abbruchbedingung). Durch klicken des \texttt{Speichern} Buttons wird der Test gespeichert und beendet.
 
-\includegraphics[width=\textwidth]{testrunner_finished.png}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{testrunner_finished.png}
+	\label{fig:testrunner-finished}
+	\caption{Testdurchlauf: beendet}
+\end{figure}
 
 
 \chapter{Test-Ergebnisse}
@@ -327,15 +352,33 @@ Der Test ist beendet, wenn der Proband mehr falsche Antworten gegeben hat als ve
 Durch Doppelklicken auf eine Testperson öffnet ein Tab mit allen Daten zu der ausgewählten Testperson.
 Dargstellt sind alle durchgeführten Tests und deren Ergebnisse. Durch Auswahl des gewünschten Tests und dem Fensters ``Parameter'' können sich die eingestellten Parameter des durchgeführten Tests angeschaut werden.
 
-\includegraphics[width=\textwidth]{results_parameter.png}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{results_parameter.png}
+	\label{fig:results_parameters}
+	\caption{Testergebnisse: Parameter}
+\end{figure}
+
 
 Durch Auswahl des gewünschten Tests und dem Fenster ``Bemerkung'' können sich Bemerkungen zu dem durchgeführten Test angeschaut werden.
 
-\includegraphics[width=\textwidth]{results_notes.png}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{results_notes.png}
+	\label{fig:results_notes}
+	\caption{Testergebnisse: Notizen}
+\end{figure}
 
-Unter ``Daten'' können sich dei einzelnen Daten zu einem Test angeschaut werden. Hier ist aufgelistet ind welcher Frequenz die LED geflimmert hat, welche Antwort der Proabnd gegeben hat und welche die flimmernde LED war und ob die Antwort des Probanden richtig oder falsch war.
 
-\includegraphics[width=\textwidth]{results_runs.png}
+Unter ``Daten'' können sich die einzelnen Daten zu einem Test angeschaut werden. Hier ist aufgelistet ind welcher Frequenz die LED geflimmert hat, welche Antwort der Proband gegeben hat und welche die flimmernde LED war und ob die Antwort des Probanden richtig oder falsch war.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{results_runs.png}
+	\label{fig:results_runs}
+	\caption{Testergebnisse: Messwerte einsehen}
+\end{figure}
+
 
 
 \chapter{Literatur}
